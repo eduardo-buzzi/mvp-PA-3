@@ -1,0 +1,15 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Calibração - MVP</title><link rel="stylesheet" href="/style.css"></head><body>
+<div class="container"><h1>Automação de Certificados de Calibração</h1><p class="sub">MVP — Schulz S.A.</p>
+<div th:if="${erro}" class="erro" th:text="${erro}"></div>
+<form action="/calibracoes" method="post" enctype="multipart/form-data" class="card">
+<h2>Nova calibração</h2><div class="grid">
+<label>Arquivo Excel (.xlsx)<input type="file" name="arquivo" accept=".xlsx" required></label>
+<label>Código do instrumento<input name="codigoInstrumento" value="703.1208" required></label><label>TAG<input name="tag" value="CAL-001"></label>
+<label>Denominação<input name="denominacao" value="Dispositivo de controle" required></label><label>Fabricante<input name="fabricante" value="Schulz"></label>
+<label>Número de série<input name="numeroSerie" value="SN-001"></label><label>Solicitante<input name="solicitante" value="Usinagem I" required></label>
+<label>Código do padrão<input name="codigoPadrao" value="500.011" required></label><label>Certificado do padrão<input name="certificadoPadrao" value="241120502390" required></label>
+<label>Próxima calibração do padrão<input type="date" name="dataProximaCalibracaoPadrao" required></label><label>Procedimento<input name="codigoProcedimento" value="ITL-0026" required></label>
+<label>Revisão<input name="revisaoProcedimento" value="2" required></label><label>Técnico<input name="tecnico" value="Técnico do laboratório" required></label>
+<label>Signatário<input name="signatario" value="Responsável autorizado" required></label>
+</div><button type="submit">Processar calibração</button></form>
+<div class="card"><h2>Calibrações processadas</h2><table><tr><th>Certificado</th><th>Instrumento</th><th>Status</th><th></th></tr><tr th:each="c:${calibracoes}"><td th:text="${c.numeroCertificado}"></td><td th:text="${c.codigoInstrumento}"></td><td th:text="${c.status}"></td><td><a th:href="@{'/calibracoes/'+${c.id}}">Ver resultado</a></td></tr></table></div></div></body></html>

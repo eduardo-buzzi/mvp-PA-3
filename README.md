@@ -31,3 +31,17 @@ Certifique-se de ter o Java JDK 17+ e o Maven instalados na sua máquina.
    ```bash
    git clone [https://github.com/eduardo-buzzi/mvp-PA-3.git](https://github.com/eduardo-buzzi/mvp-PA-3.git)
    cd mvp-PA-3
+
+## Inicialização automatizada para AV 05 (Windows)
+
+Requisitos: Python 3.10+, Java JDK 17+ e Maven disponíveis no PATH, além de conexão com a internet para baixar dependências Maven na primeira execução.
+
+1. Extraia o projeto para uma pasta no Windows.
+2. Dê dois cliques em `iniciar_aplicacao_schulz.bat`.
+3. O script verifica Python, cria/ativa `.venv`, instala `requirements.txt` e executa `app.py`.
+4. O `app.py` verifica Java e Maven, inicia o Spring Boot e abre `http://localhost:8080/` quando o servidor responder.
+5. Selecione `planilha_teste.xlsx` na tela inicial, preencha os dados, processe a calibração e gere o PDF na página de resultados.
+
+**Observação:** o backend permanece em Java; `app.py` é um inicializador, não uma API em Python. O requisito literal da AV 05 referente a `app.py` como backend deve ser validado com o professor.
+
+**Limitação:** esta versão não implementa QR Code de validação nem aprovação eletrônica por signatário.

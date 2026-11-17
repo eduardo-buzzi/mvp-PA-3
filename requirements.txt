@@ -1,0 +1,2 @@
+# Este inicializador usa somente a biblioteca padrao do Python 3.10+.
+# As dependencias da aplicacao Java sao gerenciadas pelo Maven (pom.xml).

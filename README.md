@@ -43,5 +43,3 @@ Requisitos: Python 3.10+, Java JDK 17+ e Maven disponíveis no PATH, além de co
 5. Selecione `planilha_teste.xlsx` na tela inicial, preencha os dados, processe a calibração e gere o PDF na página de resultados.
 
 **Observação:** o backend permanece em Java; `app.py` é um inicializador, não uma API em Python. O requisito literal da AV 05 referente a `app.py` como backend deve ser validado com o professor.
-
-**Limitação:** esta versão não implementa QR Code de validação nem aprovação eletrônica por signatário.
